@@ -1,0 +1,11 @@
+setup.py
+ckanext/__init__.py
+ckanext/datospy_theme/__init__.py
+ckanext/datospy_theme/plugin.py
+ckanext_datospy_theme.egg-info/PKG-INFO
+ckanext_datospy_theme.egg-info/SOURCES.txt
+ckanext_datospy_theme.egg-info/dependency_links.txt
+ckanext_datospy_theme.egg-info/entry_points.txt
+ckanext_datospy_theme.egg-info/namespace_packages.txt
+ckanext_datospy_theme.egg-info/not-zip-safe
+ckanext_datospy_theme.egg-info/top_level.txt

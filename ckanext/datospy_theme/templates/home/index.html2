@@ -1,0 +1,113 @@
+{% ckan_extends %}
+
+{% block content %}
+
+{% resource 'datospy_theme/scripts/homepage-slider.js' %}
+{% resource 'datospy_theme/styles/slider.css' %}
+
+<div class="main homepage">
+    {{ self.primary_content() }}
+    <div class="container">
+        {{ self.secondary_content() }}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block primary_content %}
+
+
+<div class="homepage-slider-ng">
+    <div class="images-wrapper">
+
+        <div class="text-wrapper" style="background-image:url(/images/home-slider/img1.jpg)">
+            <div class="text-container">
+                <div><h3>{{ _("Cómo está el tiempo hoy en Asunción") }}</h3></div>
+                <div class="text-row">
+                    {{ _("todos los <a href=\"{link}\">conjuntos de datos climáticos</a>:").format(link='/group/cat-meteo')|safe }}
+                </div>
+                <div class="text-row">
+                    {{ _("pronósticos diarios, humedad, probabilidades de lluvia")|safe }}
+                </div>
+            </div>
+        </div>
+
+        <div class="text-wrapper"
+             style="background-image:url(/images/home-slider/img2.jpg);display:none;">
+            <div class="text-container">
+                <div><h3>{{ _("ASU, FDO, LMB") }}</h3></div>
+                <div class="text-row">
+                    {{ _("un tour por las tradiciones de Paraguay") }}
+                </div>
+                <br>
+
+                <div class="text-row">
+                    <a href="/dataset?tags=prodotti+tipici">
+                        {{ _("Click aquí para descubrir más") }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-wrapper" style="background-image:url(/images/home-slider/img3.jpg);display:none;">
+            <div class="text-container">
+                <div><h3>{{ _("Participa") }}</h3></div>
+                <div>
+          <span class="text-row">
+            {{ _("¿Hay algún conjunto de datos al que te gustaría acceder?") }}
+          </span>
+                </div>
+                <div>
+          <span class="text-row">
+            {{ _("Escribe a <a href=\"mailto:{email}\">{email}</a>").format(email='info&#64;datos.com.py')|safe }}
+          </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="overlapped_widgets" role="main">
+        <div class="container">
+            <div class="row row1">
+                <div class="span6 col1">
+                    {% snippet 'home/snippets/promoted.html' %}
+                </div>
+                <div class="span6 col2">
+                    {% snippet 'home/snippets/search.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block secondary_content %}
+<div class="container">{{ self.flash() }}</div>
+
+<div class="row group-listing" style="margin-top: 10px;">
+
+    {# ---------- Twitter timeline box ---------- #}
+    <div class="span6">
+        <div class="box">
+            <section class="group-list module module-narrow module-shallow" style="height:300px">
+                <a class="twitter-timeline" href="https://twitter.com/user" data-widget-id="458635325376450560">Tweets
+                    por @user</a>
+                <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+                </script>
+
+            </section>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
