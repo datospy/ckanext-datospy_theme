@@ -8,17 +8,33 @@
 {% resource 'datospy_theme/scripts/tag-cloud.js' %}
 
 
-<div class="main homepage layout-2">
+<div class="main homepage layout-2" data-cloud="">
     {{ self.primary_content() }}
 </div>
 
-{% set tags = h.get_facet_items_dict('tags', limit=20) %}
+{% set tags = h.get_facet_items_dict('tags', limit=10) %}
+
+<div id="datos" style="display:none;">{{ h.dump_json(tags)|safe }}</div>
+
+
 
 <script type="text/javascript">
+
    var tagList = {{ h.dump_json(tags)|safe }};
+   //document.getElementsByClassName("datos").setAttribute("datos", tagList);
    var frequencyList = tagList.map(function(t){
         return {"text":t["display_name"], "size":t["count"]}
    });
+    
+
+
+
+
+ 
+
+
 </script>
+
+
 
 {% endblock %}

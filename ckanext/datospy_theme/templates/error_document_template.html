@@ -1,0 +1,78 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ gettext('Permisos %(error_code)s', error_code=c.code[0]) }}{% endblock %}
+
+{% block primary %}
+
+
+  <article class="module">
+    <div class="module-content">
+      <p id="mensaje">{{ c.content}}</p>
+
+
+	
+    <article id="solicitud" class="node node-webform clearfix" about="/alta-organizacion" typeof="sioc:Item foaf:Document">  
+    <div class="user-picture">
+
+      	 <h1>Crear dataset</h1>
+         <p>Para crear un dataset tenés que formar parte de una organización (no gubernamental, universidad, empresas, etc.). <br>
+      	Si sos parte de una llená este formulario:</p>
+
+	    
+	    <div class="content">
+			<form class="webform-client-form webform-client-form-18" enctype="multipart/form-data" action="http://datos.org.py/alta-organizacion" method="post" id="webform-client-form-18" accept-charset="UTF-8">
+						    	<div><div class="form-item webform-component webform-component-textfield webform-component--nombre-de-la-organizacion">
+						  <label for="edit-submitted-nombre-de-la-organizacion">Nombre de la organización </label>
+						 <input type="text" id="edit-submitted-nombre-de-la-organizacion" name="submitted[nombre_de_la_organizacion]" value="" size="60" maxlength="128" class="form-text required">
+						</div>
+						<div class="form-item webform-component webform-component-email webform-component--e-mail">
+						  <label for="edit-submitted-e-mail">E-mail </label>
+						 <input class="email form-text form-email required" type="email" id="edit-submitted-e-mail" name="submitted[e_mail]" size="60">
+						</div>
+						<div class="form-item webform-component webform-component-textfield webform-component--telefono">
+						  <label for="edit-submitted-telefono">Teléfono </label>
+						 <input type="text" id="edit-submitted-telefono" name="submitted[telefono]" value="" size="60" maxlength="128" class="form-text required">
+						</div>
+						<div class="form-item webform-component webform-component-textarea webform-component--comentario">
+						  <label for="edit-submitted-comentario">Justificación </label>
+						 <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea id="edit-submitted-comentario" name="submitted[comentario]" cols="60" rows="5" class="form-textarea required"></textarea><div class="grippie"></div></div>
+						</div>
+						<input type="hidden" name="details[sid]">
+						<input type="hidden" name="details[page_num]" value="1">
+						<input type="hidden" name="details[page_count]" value="1">
+						<input type="hidden" name="details[finished]" value="0">
+						<input type="hidden" name="form_build_id" value="form-vscCDPHp7hSzeDscaqlkb1yxM8tS_V9KCtgxsu3yRtI">
+						<input type="hidden" name="form_token" value="7LI_n2T4D5gwdZOIWJT2dsFkHFhqi_P_EtXgO4fTzwk">
+						<input type="hidden" name="form_id" value="webform_client_form_18">
+						<div class="form-actions" style="text-align:left;"><input class="webform-submit button-primary form-submit" type="submit" name="op" value="Enviar"></div></div>
+
+			</form>
+		</div>
+    </article>
+   </div>
+  </article>
+
+  <script type="text/javascript">
+ 	  document.getElementById('solicitud').style.display = 'none';
+
+
+  if (document.getElementById('mensaje').innerHTML =="No tienes permisos para realizar esto."){
+
+       document.getElementById('solicitud').style.display = 'block';
+       document.getElementById('mensaje').style.display = 'none';
+
+
+
+  }
+  </script>
+{% endblock %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block flash %}
+  {# eat the flash messages caused by the 404 #}
+  {% set flash_messages = h.flash.pop_messages() %}
+{% endblock %}
+
+{% block secondary %}{% endblock %}

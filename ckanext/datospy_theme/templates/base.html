@@ -8,13 +8,17 @@
      was registered with when the toolkit.add_resource() function was called.
      'example_theme.css' is the path to the CSS file, relative to the root of
      the fanstatic directory. #}
-  {% resource 'datospy_theme/datospy_theme.css' %}
+  {% resource 'datospy_theme/datospy_thememin.css' %}
   {% resource 'datospy_theme/styles/introjs.css' %}
-{% resource 'datospy_theme/scripts/jquery.js' %}
-{% resource 'datospy_theme/scripts/intro.js' %}
-{% resource 'datospy_theme/scripts/tutorial.js' %}
+  {% resource 'datospy_theme/styles/colorboxmin.css' %}
+  
+{% resource 'datospy_theme/scripts/jquerymin.js' %}
+{% resource 'datospy_theme/scripts/intromin.js' %}
+{% resource 'datospy_theme/scripts/tutorialmin.js' %}
 
-
-
-
+{% resource 'datospy_theme/scripts/menumin.js' %}
+{% resource 'datospy_theme/scripts/jquery.colorbox-min.js' %}
 {% endblock %}
+
+
+

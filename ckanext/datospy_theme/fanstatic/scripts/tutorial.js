@@ -36,9 +36,7 @@ document.getElementById('comienzo').onclick = function() {
   $("a[href$='dataset/new']").attr("data-intro","Creá un nuevo dataset");
 
 
-       introJs().start().oncomplete(function() {
-          window.location.href = 'organization/#multipageorg';
-        });
+       introJs().setOptions({ 'skipLabel': 'Finalizar' , 'doneLabel': 'Siguiente página', 'nextLabel': 'Sgte', 'prevLabel': 'Ant.'}).start();
 
 };
 
@@ -76,7 +74,7 @@ document.getElementById("tuto-create-dataset").onclick = function() {
   
 
 
-       introJs().setOption('doneLabel', 'Siguiente página').goToStep(4).start().oncomplete(function() {
+       introJs().setOptions({ 'skipLabel': 'Finalizar' , 'doneLabel': 'Fin', 'nextLabel': 'Sgte', 'prevLabel': 'Ant.'}).goToStep(4).start().oncomplete(function() {
           window.location.href = 'organization/#multipageorg';
         });
 
