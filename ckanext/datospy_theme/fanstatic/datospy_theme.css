@@ -203,6 +203,7 @@ body{
     background: url('img/menu-item_right-1.png') no-repeat center bottom;
     top: -5px;
   }
+
   .masthead .ayuda{
     background: url('img/menu-item_right-2.png') no-repeat center top;
     top: 35px;
@@ -212,6 +213,25 @@ body{
     top: 35px;
   }
 
+  .masthead .avatarx,
+  .masthead .avatarx .mask{
+    display: block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+  }
+  .masthead .avatarx{
+    position: relative;
+    right: 3px;
+    top: -5px;
+  }
+  .masthead .avatarx .mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('img/menu-item_right-mask.png') no-repeat center top;
+    z-index: 99999;
+  }
 
   .masthead .debug {
     position: absolute;
